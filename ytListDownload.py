@@ -26,7 +26,7 @@ def downloadVideos():
 		url = file.readline().strip()
 		otherUrls= file.readlines()
 	if url:
-		os.system(f"python3 youtube-dl.py -f 'best[height<=480]' --no-warnings {url}")
+		os.system(f"python3 youtube-dl.py -f 'best[height<=480]/best[ext=mp4]/best' -o '/your/directory/%(title)s-%(id)s.%(ext)s' --no-warnings {url}")
 		with open('links.txt','w') as file :
 			file.writelines(otherUrls)
 
@@ -48,6 +48,19 @@ if __name__ == "__main__":
 			os.system('clear')
 			print(Fore.YELLOW + "\n[+] Esperando para comprobar de nuevo ..." + Style.RESET_ALL)
 			time.sleep(300)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
